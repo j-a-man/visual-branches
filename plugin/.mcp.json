@@ -1,0 +1,9 @@
+{
+  "mcpServers": {
+    "vb": {
+      "type": "stdio",
+      "command": "vb",
+      "args": ["mcp"]
+    }
+  }
+}

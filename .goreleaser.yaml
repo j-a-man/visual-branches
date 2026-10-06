@@ -1,0 +1,67 @@
+version: 2
+
+project_name: vb
+
+before:
+  hooks:
+    - go mod tidy
+
+builds:
+  - id: vb
+    main: ./cmd/vb
+    binary: vb
+    env:
+      - CGO_ENABLED=0
+    goos: [linux, darwin, windows]
+    goarch: [amd64, arm64]
+    flags:
+      - -trimpath
+    ldflags:
+      - -s -w -X github.com/j-a-man/visual-branches/internal/cli.version={{ .Version }}
+
+archives:
+  - formats: [tar.gz]
+    format_overrides:
+      - goos: windows
+        formats: [zip]
+    name_template: "vb_{{ .Version }}_{{ .Os }}_{{ .Arch }}"
+    files:
+      - README.md
+      - LICENSE
+
+checksum:
+  name_template: checksums.txt
+
+changelog:
+  sort: asc
+  filters:
+    exclude:
+      - "^docs:"
+      - "^test:"
+      - "^chore:"
+
+brews:
+  - name: vb
+    repository:
+      owner: j-a-man
+      name: homebrew-tap
+      token: "{{ .Env.TAP_GITHUB_TOKEN }}"
+    skip_upload: '{{ if eq (index .Env "TAP_GITHUB_TOKEN") "" }}true{{ else }}false{{ end }}'
+    homepage: https://github.com/j-a-man/visual-branches
+    description: A map of your git branches, for humans and coding agents.
+    license: MIT
+    dependencies:
+      - name: git
+    test: |
+      system "#{bin}/vb", "version"
+
+scoops:
+  - name: vb
+    repository:
+      owner: j-a-man
+      name: scoop-bucket
+      token: "{{ .Env.TAP_GITHUB_TOKEN }}"
+    skip_upload: '{{ if eq (index .Env "TAP_GITHUB_TOKEN") "" }}true{{ else }}false{{ end }}'
+    homepage: https://github.com/j-a-man/visual-branches
+    description: A map of your git branches, for humans and coding agents.
+    license: MIT

@@ -1,0 +1,13 @@
+webapp  main · 4 branches · 2 open PRs · github 3m ago
+
+main                                       2h
+├─ feat/api      #12  approved  ✓  ↑3     20h
+│  └─ feat/ui *  #13  review    ✗  ↑2 ↓1   1d                        restack unpushed
+├─ claude/db                       ↑1     35m  .claude/worktrees/db  collision dirty local
+└─ old/done           merged               4w                        deletable
+
+needs you
+  ● #13 CI failing: lint                      gh pr checks 13
+  ● feat/ui is 1 behind its parent feat/api   git rebase feat/api feat/ui
+  ✓ #12 is ready to merge                     gh pr merge 12
+  ○ 1 merged branch can be deleted            vb cleanup

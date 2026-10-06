@@ -1,0 +1,23 @@
+{
+  "name": "visual-branches",
+  "description": "Branch map for coding agents: stacks, PRs, CI, worktrees, conflicts, and collisions between parallel agents, in one compact call.",
+  "owner": {
+    "name": "Jaylin",
+    "url": "https://github.com/j-a-man"
+  },
+  "plugins": [
+    {
+      "name": "vb",
+      "displayName": "vb: visual branches",
+      "description": "Gives Claude a compact map of every git branch (parents, PRs, CI, reviews, worktrees, predicted conflicts, overlapping branches) through an MCP server, a skill, and a session-start summary.",
+      "source": "./plugin",
+      "version": "0.1.0",
+      "author": { "name": "Jaylin", "url": "https://github.com/j-a-man" },
+      "license": "MIT",
+      "homepage": "https://github.com/j-a-man/visual-branches",
+      "repository": "https://github.com/j-a-man/visual-branches",
+      "category": "development",
+      "keywords": ["git", "branches", "worktrees", "pull-requests", "stacked-prs", "mcp"]
+    }
+  ]
+}

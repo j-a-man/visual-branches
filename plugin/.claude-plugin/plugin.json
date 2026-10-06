@@ -1,0 +1,10 @@
+{
+  "name": "vb",
+  "description": "Compact map of every git branch for Claude: parents and stacks, PRs, CI, reviews, worktrees, predicted conflicts, and branches that edit the same files. Requires the vb binary on PATH.",
+  "version": "0.1.0",
+  "author": { "name": "Jaylin", "url": "https://github.com/j-a-man" },
+  "homepage": "https://github.com/j-a-man/visual-branches",
+  "repository": "https://github.com/j-a-man/visual-branches",
+  "license": "MIT",
+  "keywords": ["git", "branches", "worktrees", "pull-requests", "mcp"]
+}

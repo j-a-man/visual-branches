@@ -1,0 +1,19 @@
+{
+  "description": "Adds a compact branch map to Claude's context when a session starts or is compacted. vb context never fails and prints nothing outside a git repository.",
+  "hooks": {
+    "SessionStart": [
+      {
+        "matcher": "startup|resume|clear|compact",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "vb",
+            "args": ["context", "--max-tokens", "500"],
+            "timeout": 30,
+            "statusMessage": "Mapping branches"
+          }
+        ]
+      }
+    ]
+  }
+}

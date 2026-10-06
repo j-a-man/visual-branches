@@ -1,0 +1,18 @@
+digraph vb {
+  rankdir=LR;
+  bgcolor="#232136";
+  pad=0.4;
+  nodesep=0.25;
+  ranksep=0.6;
+  node [shape=box, style="rounded,filled", fontname="monospace", fontsize=11, fillcolor="#2a273f", color="#44415a", fontcolor="#e0def4", penwidth=1.5];
+  edge [color="#56526e", arrowhead=none, penwidth=1.4];
+  "main" [label="main\n2h", color="#e0def4"];
+  "feat/api" [label="feat/api\n#12 approved ✓ · ↑3 · 20h", color="#f6c177"];
+  "feat/ui" [label="feat/ui\n#13 review ✗ · ↑2 ↓1 · 1d · restack", color="#ea9a97"];
+  "claude/db" [label="claude/db\n↑1 · 35m · collision", color="#44415a"];
+  "old/done" [label="old/done\nmerged · 4w · deletable", color="#c4a7e7"];
+  "main" -> "feat/api";
+  "feat/api" -> "feat/ui";
+  "main" -> "claude/db";
+  "main" -> "old/done";
+}

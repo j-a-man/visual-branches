@@ -1,0 +1,23 @@
+flowchart LR
+  n0["main<br/>2h"]:::trunk
+  n1["feat/api<br/>#35;12 approved ✓ · ↑3 · 20h"]:::warning
+  n2["feat/ui<br/>#35;13 review ✗ · ↑2 ↓1 · 1d · restack"]:::danger_head
+  n3["claude/db<br/>↑1 · 35m · collision"]:::normal
+  n4["old/done<br/>merged · 4w · deletable"]:::merged
+  n0 --> n1
+  n1 --> n2
+  n0 --> n3
+  n0 --> n4
+  classDef trunk fill:#2a273f,stroke:#e0def4,color:#e0def4,stroke-width:1.5px,font-weight:bold
+  classDef trunk_head fill:#2a273f,stroke:#ea9a97,color:#e0def4,stroke-width:3px,font-weight:bold
+  classDef danger fill:#2a273f,stroke:#eb6f92,color:#e0def4,stroke-width:1.5px
+  classDef danger_head fill:#2a273f,stroke:#ea9a97,color:#e0def4,stroke-width:3px
+  classDef warning fill:#2a273f,stroke:#f6c177,color:#e0def4,stroke-width:1.5px
+  classDef warning_head fill:#2a273f,stroke:#ea9a97,color:#e0def4,stroke-width:3px
+  classDef ready fill:#2a273f,stroke:#9ccfd8,color:#e0def4,stroke-width:1.5px
+  classDef ready_head fill:#2a273f,stroke:#ea9a97,color:#e0def4,stroke-width:3px
+  classDef merged fill:#2a273f,stroke:#c4a7e7,color:#e0def4,stroke-width:1.5px
+  classDef merged_head fill:#2a273f,stroke:#ea9a97,color:#e0def4,stroke-width:3px
+  classDef normal fill:#2a273f,stroke:#44415a,color:#e0def4,stroke-width:1.5px
+  classDef normal_head fill:#2a273f,stroke:#ea9a97,color:#e0def4,stroke-width:3px
+  linkStyle default stroke:#56526e,stroke-width:1.5px

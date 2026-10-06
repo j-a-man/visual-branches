@@ -1,0 +1,11 @@
+# vb repo=webapp trunk=main head=feat/ui github=ok state=abc123def0
+# indent=child of branch above; +N/-N=commits ahead/behind parent; *=checked out here; pr#N:state,review,ci
+main 2h
+  feat/api +3 pr#12:open,approved,pass 20h
+    feat/ui* +2 -1 pr#13:open,review-required,fail(lint) 1d restack unpushed=1
+  claude/db +1 35m wt=.claude/worktrees/db collision dirty=2 local
+merged: old/done -> vb cleanup
+attention:
+- high: #13 CI failing: lint -> gh pr checks 13
+- med: feat/ui is 1 behind its parent feat/api -> git rebase feat/api feat/ui
+- ready: #12 is ready to merge -> gh pr merge 12

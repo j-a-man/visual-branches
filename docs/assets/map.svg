@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="882" height="750" viewBox="0 0 882 750" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, 'Liberation Mono', monospace">
+<rect width="100%" height="100%" rx="12" fill="#232136"/>
+<text x="24" y="27" font-size="13" font-weight="700" fill="#ea9a97">webapp</text>
+<text x="85" y="27" font-size="11" fill="#6e6a86">main · 12 branches</text>
+<g transform="translate(0 24)">
+<g fill="none" stroke-width="1.5" stroke-linecap="round">
+<path d="M174.0 357.0 C206.0 357.0 206.0 51.0 238.0 51.0" stroke="#56526e"/>
+<path d="M174.0 357.0 C206.0 357.0 206.0 119.0 238.0 119.0" stroke="#56526e"/>
+<path d="M174.0 357.0 C206.0 357.0 206.0 187.0 238.0 187.0" stroke="#56526e"/>
+<path d="M174.0 357.0 C206.0 357.0 206.0 255.0 238.0 255.0" stroke="#56526e"/>
+<path d="M174.0 357.0 C206.0 357.0 206.0 323.0 238.0 323.0" stroke="#56526e"/>
+<path d="M174.0 357.0 C206.0 357.0 206.0 391.0 238.0 391.0" stroke="#56526e"/>
+<path d="M463.4 391.0 C525.1 391.0 525.1 391.0 586.8 391.0" stroke="#56526e"/>
+<path d="M174.0 357.0 C206.0 357.0 206.0 459.0 238.0 459.0" stroke="#56526e"/>
+<path d="M174.0 357.0 C206.0 357.0 206.0 527.0 238.0 527.0" stroke="#56526e"/>
+<path d="M174.0 357.0 C206.0 357.0 206.0 595.0 238.0 595.0" stroke="#56526e"/>
+<path d="M174.0 357.0 C206.0 357.0 206.0 663.0 238.0 663.0" stroke="#56526e"/>
+</g>
+<g transform="translate(24.0 330.0)"><rect width="150.0" height="54" rx="8" fill="#2a273f" stroke="#44415a" stroke-width="1"/><rect x="6" y="10" width="3" height="34" rx="1.5" fill="#e0def4"/><text x="20" y="23" font-size="13" font-weight="700" fill="#e0def4">main</text><text x="20" y="41" font-size="11" fill="#908caa">3d</text></g>
+<g transform="translate(238.0 24.0)"><rect width="166.6" height="54" rx="8" fill="#2a273f" stroke="#44415a" stroke-width="1"/><rect x="6" y="10" width="3" height="34" rx="1.5" fill="#eb6f92"/><text x="20" y="23" font-size="13" font-weight="600" fill="#e0def4">codex/cache-layer</text><text x="20" y="41" font-size="11" fill="#908caa">↑1 · 25m · collision</text></g>
+<g transform="translate(238.0 92.0)"><rect width="213.4" height="54" rx="8" fill="#2a273f" stroke="#44415a" stroke-width="1"/><rect x="6" y="10" width="3" height="34" rx="1.5" fill="#eb6f92"/><text x="20" y="23" font-size="13" font-weight="600" fill="#e0def4">claude/refactor-db-pool</text><text x="20" y="41" font-size="11" fill="#908caa">↑2 · 35m · collision</text></g>
+<g transform="translate(238.0 160.0)"><rect width="150.0" height="54" rx="8" fill="#2a273f" stroke="#44415a" stroke-width="1"/><rect x="6" y="10" width="3" height="34" rx="1.5" fill="#56526e"/><text x="20" y="23" font-size="13" font-weight="600" fill="#e0def4">spike/graphql</text><text x="20" y="41" font-size="11" fill="#908caa">↑1 · 2h</text></g>
+<g transform="translate(238.0 228.0)"><rect width="271.6" height="54" rx="8" fill="#2a273f" stroke="#44415a" stroke-width="1"/><rect x="6" y="10" width="3" height="34" rx="1.5" fill="#9ccfd8"/><text x="20" y="23" font-size="13" font-weight="600" fill="#e0def4">docs/onboarding</text><text x="20" y="41" font-size="11" fill="#908caa">#147 approved ✓ · ↑2 · 3h · unpushed</text></g>
+<g transform="translate(238.0 296.0)"><rect width="232.0" height="54" rx="8" fill="#2a273f" stroke="#44415a" stroke-width="1"/><rect x="6" y="10" width="3" height="34" rx="1.5" fill="#56526e"/><text x="20" y="23" font-size="13" font-weight="600" fill="#e0def4">fix/login-race</text><text x="20" y="41" font-size="11" fill="#908caa">#150 draft ● · ↑1 · 5h · dirty</text></g>
+<g transform="translate(238.0 364.0)"><rect width="225.4" height="54" rx="8" fill="#2a273f" stroke="#44415a" stroke-width="1"/><rect x="6" y="10" width="3" height="34" rx="1.5" fill="#f6c177"/><text x="20" y="23" font-size="13" font-weight="600" fill="#e0def4">feat/auth-api</text><text x="20" y="41" font-size="11" fill="#908caa">#142 approved ✓ · ↑4 ↓1 · 20h</text></g>
+<g transform="translate(586.8 364.0)"><rect width="271.6" height="54" rx="8" fill="#2a273f" stroke="#ea9a97" stroke-width="2"/><rect x="6" y="10" width="3" height="34" rx="1.5" fill="#eb6f92"/><text x="20" y="23" font-size="13" font-weight="600" fill="#e0def4">feat/auth-ui</text><text x="20" y="41" font-size="11" fill="#908caa">#143 review ✗ · ↑2 ↓1 · 1d · restack</text></g>
+<g transform="translate(238.0 432.0)"><rect width="284.8" height="54" rx="8" fill="#2a273f" stroke="#44415a" stroke-width="1"/><rect x="6" y="10" width="3" height="34" rx="1.5" fill="#eb6f92"/><text x="20" y="23" font-size="13" font-weight="600" fill="#e0def4">feat/payments</text><text x="20" y="41" font-size="11" fill="#908caa">#138 changes ✓ · ↑1 ↓1 · 4d · conflict</text></g>
+<g transform="translate(238.0 500.0)"><rect width="218.8" height="54" rx="8" fill="#2a273f" stroke="#44415a" stroke-width="1"/><rect x="6" y="10" width="3" height="34" rx="1.5" fill="#c4a7e7"/><text x="20" y="23" font-size="13" font-weight="600" fill="#6e6a86">chore/deps</text><text x="20" y="41" font-size="11" fill="#908caa">#131 merged · 9d · deletable</text></g>
+<g transform="translate(238.0 568.0)"><rect width="185.8" height="54" rx="8" fill="#2a273f" stroke="#44415a" stroke-width="1"/><rect x="6" y="10" width="3" height="34" rx="1.5" fill="#c4a7e7"/><text x="20" y="23" font-size="13" font-weight="600" fill="#6e6a86">feat/search</text><text x="20" y="41" font-size="11" fill="#908caa">merged · 2w · deletable</text></g>
+<g transform="translate(238.0 636.0)"><rect width="151.0" height="54" rx="8" fill="#2a273f" stroke="#44415a" stroke-width="1"/><rect x="6" y="10" width="3" height="34" rx="1.5" fill="#56526e"/><text x="20" y="23" font-size="13" font-weight="600" fill="#e0def4">feat/billing-v2</text><text x="20" y="41" font-size="11" fill="#908caa">↑1 ↓5 · 6w</text></g>
+</g>
+</svg>

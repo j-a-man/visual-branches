@@ -1,0 +1,34 @@
+# Build outputs
+/bin/
+/dist/
+/vb
+*.exe
+*.test
+*.out
+coverage*.txt
+coverage*.html
+
+# Web dependencies (internal/web/dist is generated but committed, because go:embed needs it)
+node_modules/
+
+# Local environment and personal config
+.env
+.env.*
+
+# Agent session and config folders (the .claude-plugin/ marketplace is part of the project)
+/.claude/
+.codex/
+.cursor/
+
+# Editors and OS
+.vscode/
+.idea/
+*.swp
+*~
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Logs
+*.log
+npm-debug.log*

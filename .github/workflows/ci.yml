@@ -1,0 +1,92 @@
+name: ci
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    name: test (${{ matrix.os }})
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, macos-latest, windows-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-go@v5
+        with:
+          go-version-file: go.mod
+      - name: Configure git for tests
+        run: |
+          git config --global user.name "vb ci"
+          git config --global user.email "ci@example.com"
+      - name: Vet
+        run: go vet ./...
+      - name: Test
+        if: runner.os != 'Windows'
+        run: go test -race -count=1 ./...
+      - name: Test (Windows)
+        if: runner.os == 'Windows'
+        run: go test -count=1 ./...
+      - name: Build
+        run: go build ./cmd/vb
+
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-go@v5
+        with:
+          go-version-file: go.mod
+      - name: gofmt
+        run: test -z "$(gofmt -l .)" || (gofmt -l . && exit 1)
+      - uses: golangci/golangci-lint-action@v8
+        with:
+          version: latest
+
+  web:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: web
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: web/package-lock.json
+      - run: npm ci
+      - name: Type check
+        run: npm run check
+      - name: Build
+        run: npm run build
+      - name: Embedded assets are up to date
+        run: git diff --exit-code -- ../internal/web/dist || (echo "Run 'npm run build' in web/ and commit internal/web/dist" && exit 1)
+
+  demo:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-go@v5
+        with:
+          go-version-file: go.mod
+      - name: End-to-end on the demo repository
+        run: |
+          git config --global user.name "vb ci"
+          git config --global user.email "ci@example.com"
+          go build -o vb ./cmd/vb
+          go run ./tools/demo "$RUNNER_TEMP/demo"
+          cd "$RUNNER_TEMP/demo/webapp"
+          export VB_GITHUB_FIXTURE=../prs.json
+          "$GITHUB_WORKSPACE/vb" --no-color
+          "$GITHUB_WORKSPACE/vb" --agent
+          "$GITHUB_WORKSPACE/vb" show feat/auth-ui --no-color
+          "$GITHUB_WORKSPACE/vb" export mermaid > /dev/null
+          "$GITHUB_WORKSPACE/vb" export svg > /dev/null
+          "$GITHUB_WORKSPACE/vb" doctor --no-color || true

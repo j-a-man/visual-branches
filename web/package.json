@@ -1,0 +1,15 @@
+{
+  "name": "vb-web",
+  "private": true,
+  "description": "The local web view of visual-branches (vb). Built into internal/web/dist and embedded in the vb binary.",
+  "type": "module",
+  "scripts": {
+    "build": "node build.mjs",
+    "check": "tsc --noEmit",
+    "watch": "node build.mjs --watch"
+  },
+  "devDependencies": {
+    "esbuild": "^0.25.0",
+    "typescript": "^5.9.0"
+  }
+}
