@@ -84,13 +84,15 @@ func Open(ctx context.Context, dir string) (*Repo, error) {
 		r.bin = env
 	}
 	// Ask for the version concurrently; process start-up dominates both calls.
+	// The goroutine runs in abs rather than r.Root because r.Root is
+	// rewritten below once rev-parse reports the top-level directory.
 	type versionResult struct {
 		out string
 		err error
 	}
 	vch := make(chan versionResult, 1)
 	go func() {
-		out, err := r.Run(ctx, "version")
+		out, err := r.RunIn(ctx, abs, "version")
 		vch <- versionResult{out, err}
 	}()
 	out, err := r.Run(ctx, "rev-parse", "--path-format=absolute", "--show-toplevel", "--git-dir", "--git-common-dir")

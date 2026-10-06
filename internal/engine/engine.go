@@ -461,6 +461,9 @@ func (b *builder) collectWorktrees(ctx context.Context) {
 	if !b.s.Config.Analysis.WorktreeStatus {
 		return
 	}
+	// Workers record statuses in their own map; b.worktrees is only updated
+	// after every worker is done, since it is being iterated meanwhile.
+	statuses := map[string]git.Status{}
 	var mu sync.Mutex
 	var wg sync.WaitGroup
 	sem := make(chan struct{}, 6)
@@ -470,18 +473,22 @@ func (b *builder) collectWorktrees(ctx context.Context) {
 		}
 		wg.Add(1)
 		sem <- struct{}{}
-		go func(name string, wt worktreeInfo) {
+		go func(name, path string) {
 			defer wg.Done()
 			defer func() { <-sem }()
-			if st, err := b.s.Repo.WorktreeStatus(ctx, wt.path); err == nil {
-				wt.status = st
+			if st, err := b.s.Repo.WorktreeStatus(ctx, path); err == nil {
 				mu.Lock()
-				b.worktrees[name] = wt
+				statuses[name] = st
 				mu.Unlock()
 			}
-		}(name, wt)
+		}(name, wt.path)
 	}
 	wg.Wait()
+	for name, st := range statuses {
+		wt := b.worktrees[name]
+		wt.status = st
+		b.worktrees[name] = wt
+	}
 }
 
 type worktreeInfo struct {
